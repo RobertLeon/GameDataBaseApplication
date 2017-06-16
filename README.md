@@ -16,7 +16,10 @@ Allows the user to pick betweem the Games Database Form, Random Game Form, or to
 
 ## Games Database Form
 
-
+Allows the user to add, edit, and remove games from the database. Has input for the name of the game, 
+platform the game is on, and the completion status of the game.
 
 ## Random Game Form
 
+Picks a random amount of games from the database depending on user input. The user can select how many games are chosen,
+completion rate, and what platform the game is on when selecting the amount of games shown.
