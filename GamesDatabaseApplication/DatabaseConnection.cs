@@ -14,11 +14,11 @@ namespace GamesDatabaseApplication
 {
     class DatabaseConnection
     {
-        static SqlConnection sqlConnection;
-        public static bool connOpen = false;
+        static SqlConnection sqlConnection;           //SQL connection
+        public static bool connOpen = false;          //Is the connection open?
         static string serverName = "Server Name";     //These variables need to be changed based
         static string dataBase = "DataBase";          //on the server and database that are being connected to.
-        public static string connectionString;
+        public static string connectionString;        //Connection string for SQL
 
         public static SqlConnection SQLConnect(string userName, string userPass)
         {

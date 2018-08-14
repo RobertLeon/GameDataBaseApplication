@@ -16,8 +16,8 @@ namespace GamesDatabaseApplication
     public partial class LogInForm : Form
     {
 
-        public static string user;
-        public static string pass;
+        public static string user;          //Username
+        public static string pass;          //Password
        
         public LogInForm()
         {
@@ -37,15 +37,18 @@ namespace GamesDatabaseApplication
                 ResetTextBoxes();
             }
             else
-            {   //Attempts to connect to the database.
+            {   
+                //Attempts to connect to the database.
                 DatabaseConnection.SQLConnect(user, pass);
 
+                //Hide this form if the connection is made
                 if(DatabaseConnection.connOpen)
                 {
-                    this.Hide();
+                    Hide();
                     FormProvider.Directoy.ShowDialog();
                     ResetTextBoxes();
                 }
+                //Show an error
                 else
                 {
                     MessageBox.Show("Something unexpeted happened.");
@@ -70,8 +73,7 @@ namespace GamesDatabaseApplication
             }
             else
             {
-                ResetTextBoxes();
-                
+                ResetTextBoxes();                
             }
             
         }

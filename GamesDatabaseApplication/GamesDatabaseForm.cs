@@ -16,9 +16,9 @@ namespace GamesDatabaseApplication
 {
     public partial class GamesDatabaseForm : Form
     {
-        SqlConnection sqlConnection;
-        string connString;
-        string query;
+        SqlConnection sqlConnection;        //SQL connection
+        string connString;                  //SQL connection string
+        string query;                       //SQL query
 
         public GamesDatabaseForm()
         {
