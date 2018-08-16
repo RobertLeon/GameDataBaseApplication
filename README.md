@@ -5,14 +5,15 @@ This program allows a user to acess a SQL Database to:
   2. Edit details about already existing games.
   3. Remove games from the database.
   4. Select random games from the database specified by user input.
+  5. Shows the user games by completion rate or by platform.
 
 ## Log In Form
 
-Allows the user to access the database, and other function of the application and allows them to exit the program
+Allows the user to access the database, and other function of the application and allows them to exit the program.
 
 ## Directory Form
 
-Allows the user to pick betweem the Games Database Form, Random Game Form, or to go back to the Log In Form
+Allows the user to pick betweem the Games Database Form, Random Game Form, or to go back to the Log In Form.
 
 ## Games Database Form
 
@@ -23,3 +24,7 @@ platform the game is on, and the completion status of the game.
 
 Picks a random amount of games from the database depending on user input. The user can select how many games are chosen,
 completion rate, and what platform the game is on when selecting the amount of games shown.
+
+## Pie Chart Form
+
+Shows the user how many games they have completed on a pie chart or how many games they have on each platform.
