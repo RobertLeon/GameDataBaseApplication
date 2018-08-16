@@ -2,13 +2,7 @@
 //
 //Shows a random amount of games based on the user's input.
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -28,14 +22,14 @@ namespace GamesDatabaseApplication
         }
 
         //Main menu button
-        private void mainMenuButton_Click(object sender, EventArgs e)
+        private void MainMenuButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             FormProvider.Directoy.Show();
         }
 
         //Show random number of games based on user input.
-        private void randomGameButton_Click(object sender, EventArgs e)
+        private void RandomGameButton_Click(object sender, EventArgs e)
         {
             if (numberGamesComboBox.SelectedIndex != -1)
             {
@@ -75,7 +69,7 @@ namespace GamesDatabaseApplication
         }
 
         //Sets the combo boxes to empty on clicking the button
-        private void resetComboBoxesButton_Click(object sender, EventArgs e)
+        private void ResetComboBoxesButton_Click(object sender, EventArgs e)
         {
             ResetInput();
         }
@@ -115,9 +109,9 @@ namespace GamesDatabaseApplication
                 //Close Connection
                 sqlConnection.Close();
             }
+            //Show an error if the query fails
             catch (SqlException ex)
             {
-                //Error Handling
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -159,6 +153,7 @@ namespace GamesDatabaseApplication
                     //Close the connection
                     sqlConnection.Close();
                 }
+                //Show an error if the query fails
                 catch (SqlException ex)
                 {
                     MessageBox.Show(ex.ToString());
@@ -196,6 +191,7 @@ namespace GamesDatabaseApplication
                     //Close the Connection
                     sqlConnection.Close();
                 }
+                //Show an error if the quety fails
                 catch (SqlException ex)
                 {
                     MessageBox.Show(ex.ToString());
@@ -233,6 +229,7 @@ namespace GamesDatabaseApplication
                 //Closes the connection
                 sqlConnection.Close();
             }
+            //Show an error if the query fails
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -247,5 +244,10 @@ namespace GamesDatabaseApplication
             numberGamesComboBox.SelectedIndex = -1;
         }
 
+        //Shows the directory form if this form was closed
+        private void RandomGameForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormProvider.Directoy.Show();
+        }
     }
 }

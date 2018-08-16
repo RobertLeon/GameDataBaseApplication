@@ -221,6 +221,7 @@
             this.Controls.Add(this.gamesDataView);
             this.Name = "GamesDatabaseForm";
             this.Text = "GamesDatabaseForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GamesDatabaseForm_FormClosed);
             this.Load += new System.EventHandler(this.GamesDatabaseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gamesDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();

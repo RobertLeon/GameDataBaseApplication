@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.mainMenuButton = new System.Windows.Forms.Button();
+            this.MainMenuButton = new System.Windows.Forms.Button();
             this.gameView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -39,21 +39,21 @@
             this.completionComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.numberGamesComboBox = new System.Windows.Forms.ComboBox();
-            this.randomGameButton = new System.Windows.Forms.Button();
-            this.resetComboBoxesButton = new System.Windows.Forms.Button();
+            this.RandomGameButton = new System.Windows.Forms.Button();
+            this.ResetComboBoxesButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gameView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // mainMenuButton
+            // MainMenuButton
             // 
-            this.mainMenuButton.Location = new System.Drawing.Point(625, 479);
-            this.mainMenuButton.Name = "mainMenuButton";
-            this.mainMenuButton.Size = new System.Drawing.Size(155, 35);
-            this.mainMenuButton.TabIndex = 0;
-            this.mainMenuButton.Text = "Main Menu";
-            this.mainMenuButton.UseVisualStyleBackColor = true;
-            this.mainMenuButton.Click += new System.EventHandler(this.mainMenuButton_Click);
+            this.MainMenuButton.Location = new System.Drawing.Point(625, 479);
+            this.MainMenuButton.Name = "MainMenuButton";
+            this.MainMenuButton.Size = new System.Drawing.Size(155, 35);
+            this.MainMenuButton.TabIndex = 0;
+            this.MainMenuButton.Text = "Main Menu";
+            this.MainMenuButton.UseVisualStyleBackColor = true;
+            this.MainMenuButton.Click += new System.EventHandler(this.MainMenuButton_Click);
             // 
             // gameView
             // 
@@ -172,33 +172,33 @@
             this.numberGamesComboBox.Size = new System.Drawing.Size(260, 21);
             this.numberGamesComboBox.TabIndex = 8;
             // 
-            // randomGameButton
+            // RandomGameButton
             // 
-            this.randomGameButton.Location = new System.Drawing.Point(454, 199);
-            this.randomGameButton.Name = "randomGameButton";
-            this.randomGameButton.Size = new System.Drawing.Size(155, 35);
-            this.randomGameButton.TabIndex = 9;
-            this.randomGameButton.Text = "Select Random Game(s)";
-            this.randomGameButton.UseVisualStyleBackColor = true;
-            this.randomGameButton.Click += new System.EventHandler(this.randomGameButton_Click);
+            this.RandomGameButton.Location = new System.Drawing.Point(454, 199);
+            this.RandomGameButton.Name = "RandomGameButton";
+            this.RandomGameButton.Size = new System.Drawing.Size(155, 35);
+            this.RandomGameButton.TabIndex = 9;
+            this.RandomGameButton.Text = "Select Random Game(s)";
+            this.RandomGameButton.UseVisualStyleBackColor = true;
+            this.RandomGameButton.Click += new System.EventHandler(this.RandomGameButton_Click);
             // 
-            // resetComboBoxesButton
+            // ResetComboBoxesButton
             // 
-            this.resetComboBoxesButton.Location = new System.Drawing.Point(625, 426);
-            this.resetComboBoxesButton.Name = "resetComboBoxesButton";
-            this.resetComboBoxesButton.Size = new System.Drawing.Size(155, 35);
-            this.resetComboBoxesButton.TabIndex = 10;
-            this.resetComboBoxesButton.Text = "Clear Input";
-            this.resetComboBoxesButton.UseVisualStyleBackColor = true;
-            this.resetComboBoxesButton.Click += new System.EventHandler(this.resetComboBoxesButton_Click);
+            this.ResetComboBoxesButton.Location = new System.Drawing.Point(625, 426);
+            this.ResetComboBoxesButton.Name = "ResetComboBoxesButton";
+            this.ResetComboBoxesButton.Size = new System.Drawing.Size(155, 35);
+            this.ResetComboBoxesButton.TabIndex = 10;
+            this.ResetComboBoxesButton.Text = "Clear Input";
+            this.ResetComboBoxesButton.UseVisualStyleBackColor = true;
+            this.ResetComboBoxesButton.Click += new System.EventHandler(this.ResetComboBoxesButton_Click);
             // 
             // RandomGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 526);
-            this.Controls.Add(this.resetComboBoxesButton);
-            this.Controls.Add(this.randomGameButton);
+            this.Controls.Add(this.ResetComboBoxesButton);
+            this.Controls.Add(this.RandomGameButton);
             this.Controls.Add(this.numberGamesComboBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.completionComboBox);
@@ -207,9 +207,10 @@
             this.Controls.Add(this.platformComboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gameView);
-            this.Controls.Add(this.mainMenuButton);
+            this.Controls.Add(this.MainMenuButton);
             this.Name = "RandomGameForm";
             this.Text = "RandomGameForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RandomGameForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.gameView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -219,7 +220,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button mainMenuButton;
+        private System.Windows.Forms.Button MainMenuButton;
         private System.Windows.Forms.DataGridView gameView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource bindingSource1;
@@ -229,7 +230,7 @@
         private System.Windows.Forms.ComboBox completionComboBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox numberGamesComboBox;
-        private System.Windows.Forms.Button randomGameButton;
-        private System.Windows.Forms.Button resetComboBoxesButton;
+        private System.Windows.Forms.Button RandomGameButton;
+        private System.Windows.Forms.Button ResetComboBoxesButton;
     }
 }

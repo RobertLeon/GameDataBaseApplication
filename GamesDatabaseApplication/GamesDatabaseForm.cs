@@ -2,13 +2,7 @@
 //
 //Allows the user to add, remove, and edit a list of games to a table in a SQL Database.
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -16,9 +10,9 @@ namespace GamesDatabaseApplication
 {
     public partial class GamesDatabaseForm : Form
     {
-        SqlConnection sqlConnection;        //SQL connection
-        string connString;                  //SQL connection string
-        string query;                       //SQL query
+        private SqlConnection sqlConnection;        //SQL connection
+        private string connString;                  //SQL connection string
+        private string query;                       //SQL query
 
         public GamesDatabaseForm()
         {
@@ -35,12 +29,14 @@ namespace GamesDatabaseApplication
                 //SQL SELECT query
                 query = "SELECT * FROM GameCollection";
 
+                //Show the data on the table
                 DataTable table = new DataTable();
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connString);
                 bindingSource1.DataSource = table;
                 dataAdapter.Fill(table);
                 gamesDataView.DataSource = bindingSource1;
             }
+            //Show and error if the query fails
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -162,7 +158,7 @@ namespace GamesDatabaseApplication
         //Hides the current form and shows the Directory Form.
         private void directoryButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             FormProvider.Directoy.Show();
         }
 
@@ -177,6 +173,7 @@ namespace GamesDatabaseApplication
                 //Display an error to the user that input is needed in all fields.
                 MessageBox.Show("Please enter the name of the game, select a platform, and completion amount, then try again.");
             }
+            //Insert data into the table and refresh the table
             else
             {
                 InsertDB();
@@ -196,6 +193,7 @@ namespace GamesDatabaseApplication
                 //Display an error to the user that input is needed in all fields.
                 MessageBox.Show("Please enter the name of the game, select a platform, and completion amount, then try again.");
             }
+            //Update the database and refresh the table
             else
             {
                 UpdateDB();
@@ -213,12 +211,19 @@ namespace GamesDatabaseApplication
                 //Display an error to the user that input is needed in all fields.
                 MessageBox.Show("Please enter the name of the game you wish to remove from the database.");
             }
+            //Delete the item and refresh the table
             else
             {
                 DeleteDB();
                 ShowTable();
                 ResetInput();
             }
+        }
+
+        //Shows the directory form on closing this form
+        private void GamesDatabaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormProvider.Directoy.Show();
         }
     }
 }

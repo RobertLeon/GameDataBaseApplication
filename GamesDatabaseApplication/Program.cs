@@ -1,10 +1,7 @@
 ﻿//Created By Robert Bryant
 //
-//Handles the singletons and eindows form application
+//Handles the singletons and windows form application
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GamesDatabaseApplication
@@ -23,10 +20,12 @@ namespace GamesDatabaseApplication
         }       
     }
 
+   
+
     //For showing and hiding individual forms.
     public class FormProvider
     {
-        //Log in form singleton
+        //Log In Form singleton
         public static LogInForm LogIn
         {
             get
@@ -40,7 +39,7 @@ namespace GamesDatabaseApplication
         }
         private static LogInForm _logIn;
 
-        //Directory form singleton
+        //Directory Form singleton
         public static DirectoryForm Directoy
         {
             get
@@ -68,7 +67,7 @@ namespace GamesDatabaseApplication
         }
         private static GamesDatabaseForm _gamesDatabase;
 
-        //Random game form singleton
+        //Random Game Form singleton
         public static RandomGameForm RandomGame
         {
             get
@@ -81,5 +80,19 @@ namespace GamesDatabaseApplication
             }
         }
         private static RandomGameForm _randomGame;
+
+        //Pie Chart Form singleton
+        public static PieChartForm PieChart
+        {
+            get
+            {
+                if(_pieChart == null)
+                {
+                    _pieChart = new PieChartForm();
+                }
+                return _pieChart;
+            }
+        }
+        private static PieChartForm _pieChart;
     }
 }

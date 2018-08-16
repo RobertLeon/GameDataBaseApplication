@@ -1,11 +1,6 @@
 ﻿//Created by Robert Bryant
 //
 //Connection class for the SQL Database
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -16,8 +11,8 @@ namespace GamesDatabaseApplication
     {
         static SqlConnection sqlConnection;           //SQL connection
         public static bool connOpen = false;          //Is the connection open?
-        static string serverName = "Server Name";     //These variables need to be changed based
-        static string dataBase = "DataBase";          //on the server and database that are being connected to.
+        static string serverName = "Server";          //These variables need to be changed based
+        static string dataBase = "Database";          //on the server and database that are being connected to.
         public static string connectionString;        //Connection string for SQL
 
         public static SqlConnection SQLConnect(string userName, string userPass)
@@ -52,7 +47,7 @@ namespace GamesDatabaseApplication
                 {
                     //Display the error in a message box
                     MessageBox.Show("Error Number: " + ex.Number.ToString() +
-                        "\n"+ "Error Details: " +ex.ToString());
+                        "\n"+ "Error Details: " + ex.ToString());
 
                     return null;
                 }
